@@ -14,7 +14,7 @@
 
 ## 🛠️ Objetivo
 
-- Para os testes envolvendo o uso do Kubernetes a partir do Microsoft Azure, será criada uma API REST baseada no ASP.NET Core 5.0. Esta aplicação produzirá como retorno a quantidade de acessos à API, Kernel do sistema operacional utilizado pelo container Docker, TargetFramework, uma mensagem fixa e outra variável. 
+- Para os testes envolvendo o uso de `pipelines ci/cd` e `Kubernetes` a partir do `Microsoft Azure`, será criada uma API REST baseada no ASP.NET Core 5.0. Esta aplicação produzirá como retorno a quantidade de acessos à API, Kernel do sistema operacional utilizado pelo container Docker, TargetFramework, uma mensagem fixa e outra variável. 
 
 ## ✨ Tecnologias
 
