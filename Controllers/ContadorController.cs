@@ -34,7 +34,7 @@ namespace APIContagem.Controllers
                     Local = _CONTADOR.Local,
                     Kernel = _CONTADOR.Kernel,
                     TargetFramework = _CONTADOR.TargetFramework,
-                    MensagemFixa = "API para testes do Azure DevOps",
+                    MensagemFixa = "Teste",
                     MensagemVariavel = _configuration["MensagemVariavel"]
                 };
             }
