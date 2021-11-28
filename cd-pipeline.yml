@@ -1,0 +1,54 @@
+trigger: none
+pr: none
+
+resources:
+  repositories:
+    # Adicionando repositório de templates base para o processo de cicd
+    - repository: templates
+      type: github
+      name: leoviana00/azure-templates-pipeline
+      ref: 'refs/heads/main'
+      endpoint: 'leoviana00'
+
+    # Adicionando repositório de templates base para helm charts
+    - repository: helmrepo
+      type: github
+      name: leoviana00/azure-template-helm-chart
+      ref: 'refs/heads/master'
+      endpoint: 'leoviana00'
+
+  pipelines:
+  - pipeline: ci-pipeline
+    source: app-demo-aspnetcore5-ci  
+    trigger:
+      enabled: true
+      branches:
+        include:
+          - master
+
+variables:
+- group: acr-variable-group
+- template: templates/dotnet/cd-vars-template.yml@templates
+  parameters:
+      projectName: app-demo-aspnetcore5
+- name: k8sNamespace
+  value: gmsocial-dotnet
+
+
+stages:
+- stage: dev
+  displayName: dev
+  jobs:
+  - deployment: dev
+    variables:
+    - group: aks-variable-group
+      # define 5 more variables: aks, rg, aksSpId, aksSpSecret and aksSpTenantId in the Azure pipeline UI definition
+    displayName: deploy helm chart into AKS
+    pool:
+      vmImage: ubuntu-latest
+    environment: development-$(projectName)
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - template: templates/dotnet/cd-steps-template.yml@templates

@@ -1,0 +1,41 @@
+trigger:
+  branches:
+    include:
+      - '*'
+pr: none
+
+pool:
+  vmImage: ubuntu-latest 
+
+resources:
+  repositories:
+    # Adicionando repositório de templates base para o processo de cicd
+    - repository: templates
+      type: github
+      name: leoviana00/azure-templates-pipeline
+      ref: 'refs/heads/main'
+      endpoint: 'leoviana00'
+
+    # Adicionando repositório de templates base para helm charts
+    - repository: helmrepo
+      type: github
+      name: leoviana00/azure-template-helm-chart
+      ref: 'refs/heads/master'
+      endpoint: 'leoviana00'
+
+variables:
+  - group: acr-variable-group
+  - template: templates/dotnet/ci-vars-template.yml@templates
+    parameters:
+      projectName: app-demo-aspnetcore5
+      dockerRegistryServiceConnectionName: acr-connection-aks
+      dockerfile: '$(projectName)/Dockerfile'
+      buildContext: '$(Build.SourcesDirectory)'
+      chartHelmFile: 'azure-template-helm-chart/templates/dotnet/$(projectName)'
+
+steps: 
+  - checkout: self
+  - checkout: helmrepo 
+  - template: templates/dotnet/ci-steps-template.yml@templates
+  
+ 
