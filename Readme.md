@@ -6,6 +6,8 @@
   <img alt="Azure" src="https://img.shields.io/static/v1?label=DevOps&message=AZURE&color=49AA26&labelColor=000000">
 </p>
 
+![](./img/azure-dotnetcore-banner.png)
+
 ## 🌱 Projeto
 
 - ASP.NET Core 5 + REST API Contagem de Acessos
