@@ -1,9 +1,9 @@
 <h1 align="center">Contador</h1>
 
 <p align="center">
-  <img alt="ASPNETCore5" src="https://img.shields.io/static/v1?label=API&message=Swagger&color=8257E5&labelColor=000000"  />
+  <img alt="ASPNETCore5" src="https://img.shields.io/static/v1?label=API&message=ASPNETCore5&color=8257E5&labelColor=000000"  />
 
-  <img alt="Azure" src="https://img.shields.io/static/v1?label=DevOps&message=MIT&color=49AA26&labelColor=000000">
+  <img alt="Azure" src="https://img.shields.io/static/v1?label=DevOps&message=AZURE&color=49AA26&labelColor=000000">
 </p>
 
 ## 🌱 Projeto
