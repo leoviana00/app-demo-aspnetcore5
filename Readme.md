@@ -38,3 +38,7 @@
   "mensagemVariavel": "Teste utilizando o arquivo appsettings.json"
 }
 ```
+
+- http://localhost:64762/swagger/index.html
+
+![](./img/swagger.png)
