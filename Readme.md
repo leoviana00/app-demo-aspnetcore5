@@ -42,3 +42,9 @@
 - http://localhost:64762/swagger/index.html
 
 ![](./img/swagger.png)
+
+## Referência
+
+- https://imasters.com.br/back-end/asp-net-core-azure-kubernetes-orquestracao-de-containers-na-nuvem-parte-01
+
+- https://github.com/renatogroffe/ASPNETCore5-REST_API-JSONConsoleLogger_APIContagem
