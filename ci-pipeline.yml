@@ -27,7 +27,7 @@ variables:
   - group: acr-variable-group
   - template: templates/dotnet/ci-vars-template.yml@templates
     parameters:
-      projectName: app-demo-aspnetcore5
+      projectName: dotnet5-pipeline-azure-devops
       dockerRegistryServiceConnectionName: acr-connection-aks
       dockerfile: '$(projectName)/Dockerfile'
       buildContext: '$(Build.SourcesDirectory)'

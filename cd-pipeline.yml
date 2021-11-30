@@ -19,7 +19,7 @@ resources:
 
   pipelines:
   - pipeline: ci-pipeline
-    source: app-demo-aspnetcore5-ci  
+    source: dotnet5-pipeline-azure-devops-ci  
     trigger:
       enabled: true
       branches:
@@ -30,7 +30,7 @@ variables:
 - group: acr-variable-group
 - template: templates/dotnet/cd-vars-template.yml@templates
   parameters:
-      projectName: app-demo-aspnetcore5
+      projectName: dotnet5-pipeline-azure-devops
 - name: k8sNamespace
   value: gmsocial-dotnet
 
